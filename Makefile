@@ -9,7 +9,7 @@ LEX = lex
 # C++ features are used, yacc doesn't suffice
 YACC = bison
 # -d: generate header with default name
-YFLAGS = --verbose --debug -d -Wcounterexamples -Wall
+YFLAGS = --verbose --debug -d -Wall
 COVERAGE_DIR = $(CURDIR)/.coverage
 GCOVFLAGS = -fprofile-arcs -ftest-coverage
 

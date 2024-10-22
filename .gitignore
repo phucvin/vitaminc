@@ -42,13 +42,13 @@ y.tab.*
 lex.yy.*
 
 # Assembly files
-*.s
+# *.s
 
 # QBE IR files
-*.ssa
+# *.ssa
 
 # LLVM IR files
-*.ll
+# *.ll
 
 # Python environments
 .env
