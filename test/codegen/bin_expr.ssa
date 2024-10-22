@@ -1,0 +1,112 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =l copy $__builtin_print
+	%.2 =w copy 7
+	%.4 =w copy 6
+	%.3 =w rem %.2, %.4
+	%.6 =w copy 5
+	%.8 =w copy 4
+	%.7 =w mul %.6, %.8
+	%.5 =w add %.3, %.7
+	%.10 =w copy 3
+	%.12 =w copy 2
+	%.11 =w div %.10, %.12
+	%.9 =w sub %.5, %.11
+	%.14 =w copy 1
+	%.13 =w add %.9, %.14
+	%.15 =w call $printf(l $__builtin_print_format, w %.13)
+	%.16 =l copy $__builtin_print
+	%.17 =w copy 5
+	%.19 =w copy 4
+	%.18 =w or %.17, %.19
+	%.20 =w call $printf(l $__builtin_print_format, w %.18)
+	%.21 =l copy $__builtin_print
+	%.22 =w copy 5
+	%.24 =w copy 4
+	%.23 =w xor %.22, %.24
+	%.25 =w call $printf(l $__builtin_print_format, w %.23)
+	%.26 =l copy $__builtin_print
+	%.27 =w copy 5
+	%.29 =w copy 4
+	%.28 =w and %.27, %.29
+	%.30 =w call $printf(l $__builtin_print_format, w %.28)
+	%.31 =l copy $__builtin_print
+	%.32 =w copy 1
+	%.34 =w copy 16
+	%.33 =w shl %.32, %.34
+	%.35 =w call $printf(l $__builtin_print_format, w %.33)
+	%.36 =l copy $__builtin_print
+	%.37 =w copy 1
+	%.38 =w neg %.37
+	%.40 =w copy 31
+	%.39 =w shl %.38, %.40
+	%.41 =w call $printf(l $__builtin_print_format, w %.39)
+	%.42 =l copy $__builtin_print
+	%.43 =w copy 65536
+	%.45 =w copy 16
+	%.44 =w sar %.43, %.45
+	%.46 =w call $printf(l $__builtin_print_format, w %.44)
+	%.47 =l copy $__builtin_print
+	%.48 =w copy 1
+	%.49 =w neg %.48
+	%.51 =w copy 16
+	%.50 =w sar %.49, %.51
+	%.52 =w call $printf(l $__builtin_print_format, w %.50)
+	%.53 =l copy $__builtin_print
+	%.54 =w copy 4
+	%.55 =w cnew %.54, 0
+	jnz %.55, @.logic_rhs.2, @.short_circuit.2
+@.logic_rhs.2
+	%.57 =w copy 3
+	%.56 =w cnew %.57, 0
+	jmp @.logic_end.2
+@.short_circuit.2
+	%.56 =w copy 0
+@.logic_end.2
+	%.58 =w call $printf(l $__builtin_print_format, w %.56)
+	%.59 =l copy $__builtin_print
+	%.60 =w copy 0
+	%.61 =w cnew %.60, 0
+	jnz %.61, @.logic_rhs.3, @.short_circuit.3
+@.logic_rhs.3
+	%.63 =w copy 2
+	%.62 =w cnew %.63, 0
+	jmp @.logic_end.3
+@.short_circuit.3
+	%.62 =w copy 0
+@.logic_end.3
+	%.64 =w call $printf(l $__builtin_print_format, w %.62)
+	%.65 =l copy $__builtin_print
+	%.66 =w copy 5
+	%.67 =w ceqw %.66, 0
+	jnz %.67, @.logic_rhs.4, @.short_circuit.4
+@.logic_rhs.4
+	%.69 =w copy 0
+	%.68 =w cnew %.69, 0
+	jmp @.logic_end.4
+@.short_circuit.4
+	%.68 =w copy 1
+@.logic_end.4
+	%.70 =w call $printf(l $__builtin_print_format, w %.68)
+	%.71 =l copy $__builtin_print
+	%.72 =w copy 0
+	%.73 =w ceqw %.72, 0
+	jnz %.73, @.logic_rhs.5, @.short_circuit.5
+@.logic_rhs.5
+	%.75 =w copy 0
+	%.74 =w cnew %.75, 0
+	jmp @.logic_end.5
+@.short_circuit.5
+	%.74 =w copy 1
+@.logic_end.5
+	%.76 =w call $printf(l $__builtin_print_format, w %.74)
+	%.77 =l copy $__builtin_print
+	%.78 =w copy 1
+	%.79 =w copy 2
+	%.80 =w call $printf(l $__builtin_print_format, w %.79)
+	%.81 =w copy 0
+	ret %.81
+}

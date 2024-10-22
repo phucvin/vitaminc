@@ -1,0 +1,50 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $sum(w %.1, w %.2, w %.3) {
+@.start.1
+	%.4 =l alloc4 4
+	storew %.1, %.4
+	%.5 =l alloc4 4
+	storew %.2, %.5
+	%.6 =l alloc4 4
+	storew %.3, %.6
+@.body.1
+	%.7 =w loadw %.4
+	%.9 =w loadw %.5
+	%.8 =w add %.7, %.9
+	%.11 =w loadw %.6
+	%.10 =w add %.8, %.11
+	ret %.10
+}
+export
+function w $add_five(w %.12) {
+@.start.2
+	%.13 =l alloc4 4
+	storew %.12, %.13
+@.body.2
+	%.14 =w loadw %.13
+	%.16 =w copy 5
+	%.15 =w add %.14, %.16
+	ret %.15
+}
+export
+function w $main() {
+@.start.3
+@.body.3
+	%.17 =l alloc4 4
+	%.18 =l copy $sum
+	%.19 =w copy 1
+	%.20 =w copy 2
+	%.21 =w copy 3
+	%.22 =w call %.18(w %.19, w %.20, w %.21)
+	storew %.22, %.17
+	%.23 =l alloc4 4
+	%.24 =w loadw %.17
+	%.26 =w copy 4
+	%.25 =w add %.24, %.26
+	storew %.25, %.23
+	%.27 =l copy $add_five
+	%.28 =w loadw %.23
+	%.29 =w call %.27(w %.28)
+	ret %.29
+}

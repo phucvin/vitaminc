@@ -1,0 +1,6 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+}

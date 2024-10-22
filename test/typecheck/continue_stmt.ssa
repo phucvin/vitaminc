@@ -1,0 +1,30 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =l alloc4 4
+	%.2 =w copy 0
+	storew %.2, %.1
+@.do_body.2
+	%.3 =w copy 1
+# if
+	jnz %.3, @.if_then.3, @.if_end.3
+@.if_then.3
+	%.4 =w loadw %.1
+	%.5 =w copy 5
+	storew %.5, %.1
+	jmp @.do_pred.2
+@.if_end.3
+	%.6 =w loadw %.1
+	%.7 =w copy 0
+	storew %.7, %.1
+@.do_pred.2
+	%.8 =w loadw %.1
+	%.10 =w copy 5
+	%.9 =w csltw %.8, %.10
+	jnz %.9, @.do_body.2, @.do_end.2
+@.do_end.2
+	%.11 =w copy 0
+	ret %.11
+}

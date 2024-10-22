@@ -1,0 +1,39 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =l alloc4 4
+	%.2 =w copy 1
+	storew %.2, %.1
+# switch
+	%.3 =w loadw %.1
+	jmp @.switch_cond.2
+@.switch_case.4
+	%.4 =w loadw %.1
+	%.5 =w copy 2
+	storew %.5, %.1
+	jmp @.switch_exit.3
+@.switch_case.5
+	%.6 =w loadw %.1
+	%.7 =w copy 3
+	storew %.7, %.1
+	jmp @.switch_exit.3
+@.switch_default.6
+	%.8 =w loadw %.1
+	%.9 =w copy 4
+	storew %.9, %.1
+@.switch_bottom.7
+	jmp @.switch_exit.3
+@.switch_cond.2
+	%.10 =w copy 1
+	%.11 =w ceqw %.3, %.10
+	jnz %.11, @.switch_case.4, @.switch_cond.8
+@.switch_cond.8
+	%.12 =w copy 2
+	%.13 =w ceqw %.3, %.12
+	jnz %.13, @.switch_case.5, @.switch_default.6
+@.switch_exit.3
+	%.14 =w loadw %.1
+	ret %.14
+}

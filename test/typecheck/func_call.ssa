@@ -1,0 +1,16 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $five() {
+@.start.1
+@.body.1
+	%.1 =w copy 5
+	ret %.1
+}
+export
+function w $main() {
+@.start.2
+@.body.2
+	%.2 =l copy $five
+	%.3 =w call %.2()
+	ret %.3
+}

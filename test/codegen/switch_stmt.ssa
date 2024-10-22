@@ -1,0 +1,187 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+# switch
+	%.1 =w copy 3
+	jmp @.switch_cond.2
+@.switch_case.4
+	%.2 =l copy $__builtin_print
+	%.3 =w copy 1
+	%.4 =w call $printf(l $__builtin_print_format, w %.3)
+	jmp @.switch_exit.3
+@.switch_case.5
+	%.5 =l copy $__builtin_print
+	%.6 =w copy 2
+	%.7 =w call $printf(l $__builtin_print_format, w %.6)
+	jmp @.switch_exit.3
+@.switch_default.6
+	%.8 =l copy $__builtin_print
+	%.9 =w copy 3
+	%.10 =w call $printf(l $__builtin_print_format, w %.9)
+@.switch_bottom.7
+	jmp @.switch_exit.3
+@.switch_cond.2
+	%.11 =w copy 0
+	%.12 =w ceqw %.1, %.11
+	jnz %.12, @.switch_case.4, @.switch_cond.8
+@.switch_cond.8
+	%.13 =w copy 3
+	%.14 =w ceqw %.1, %.13
+	jnz %.14, @.switch_case.5, @.switch_default.6
+@.switch_exit.3
+	%.15 =l copy $__builtin_print
+	%.16 =w copy 4
+	%.17 =w call $printf(l $__builtin_print_format, w %.16)
+# switch
+	%.18 =w copy 3
+	jmp @.switch_cond.9
+@.switch_case.11
+	%.19 =l copy $__builtin_print
+	%.20 =w copy 5
+	%.21 =w call $printf(l $__builtin_print_format, w %.20)
+	jmp @.switch_exit.10
+@.switch_default.12
+	%.22 =l copy $__builtin_print
+	%.23 =w copy 6
+	%.24 =w call $printf(l $__builtin_print_format, w %.23)
+@.switch_case.13
+	%.25 =l copy $__builtin_print
+	%.26 =w copy 7
+	%.27 =w call $printf(l $__builtin_print_format, w %.26)
+@.switch_bottom.14
+	jmp @.switch_exit.10
+@.switch_cond.9
+	%.28 =w copy 1
+	%.29 =w ceqw %.18, %.28
+	jnz %.29, @.switch_case.11, @.switch_cond.15
+@.switch_cond.15
+	%.30 =w copy 2
+	%.31 =w ceqw %.18, %.30
+	jnz %.31, @.switch_case.13, @.switch_default.12
+@.switch_exit.10
+	%.32 =l copy $__builtin_print
+	%.33 =w copy 8
+	%.34 =w call $printf(l $__builtin_print_format, w %.33)
+# switch
+	%.35 =w copy 2
+	jmp @.switch_cond.16
+@.switch_case.18
+# switch
+	%.36 =w copy 1
+	jmp @.switch_cond.19
+@.switch_case.21
+	%.37 =l copy $__builtin_print
+	%.38 =w copy 9
+	%.39 =w call $printf(l $__builtin_print_format, w %.38)
+	jmp @.switch_exit.20
+@.switch_case.22
+	%.40 =l copy $__builtin_print
+	%.41 =w copy 10
+	%.42 =w call $printf(l $__builtin_print_format, w %.41)
+	jmp @.switch_exit.20
+@.switch_default.23
+	%.43 =l copy $__builtin_print
+	%.44 =w copy 11
+	%.45 =w call $printf(l $__builtin_print_format, w %.44)
+	jmp @.switch_exit.20
+@.switch_bottom.24
+	jmp @.switch_exit.20
+@.switch_cond.19
+	%.46 =w copy 1
+	%.47 =w ceqw %.36, %.46
+	jnz %.47, @.switch_case.21, @.switch_cond.25
+@.switch_cond.25
+	%.48 =w copy 2
+	%.49 =w ceqw %.36, %.48
+	jnz %.49, @.switch_case.22, @.switch_default.23
+@.switch_exit.20
+	%.50 =l copy $__builtin_print
+	%.51 =w copy 12
+	%.52 =w call $printf(l $__builtin_print_format, w %.51)
+	jmp @.switch_exit.17
+@.switch_case.26
+# switch
+	%.53 =w copy 1
+	jmp @.switch_cond.27
+@.switch_case.29
+	%.54 =l copy $__builtin_print
+	%.55 =w copy 13
+	%.56 =w call $printf(l $__builtin_print_format, w %.55)
+	jmp @.switch_exit.28
+@.switch_case.30
+	%.57 =l copy $__builtin_print
+	%.58 =w copy 14
+	%.59 =w call $printf(l $__builtin_print_format, w %.58)
+	jmp @.switch_exit.28
+@.switch_default.31
+	%.60 =l copy $__builtin_print
+	%.61 =w copy 15
+	%.62 =w call $printf(l $__builtin_print_format, w %.61)
+	jmp @.switch_exit.28
+@.switch_bottom.32
+	jmp @.switch_exit.28
+@.switch_cond.27
+	%.63 =w copy 1
+	%.64 =w ceqw %.53, %.63
+	jnz %.64, @.switch_case.29, @.switch_cond.33
+@.switch_cond.33
+	%.65 =w copy 2
+	%.66 =w ceqw %.53, %.65
+	jnz %.66, @.switch_case.30, @.switch_default.31
+@.switch_exit.28
+	%.67 =l copy $__builtin_print
+	%.68 =w copy 16
+	%.69 =w call $printf(l $__builtin_print_format, w %.68)
+	jmp @.switch_exit.17
+@.switch_default.34
+# switch
+	%.70 =w copy 1
+	jmp @.switch_cond.35
+@.switch_case.37
+	%.71 =l copy $__builtin_print
+	%.72 =w copy 17
+	%.73 =w call $printf(l $__builtin_print_format, w %.72)
+	jmp @.switch_exit.36
+@.switch_case.38
+	%.74 =l copy $__builtin_print
+	%.75 =w copy 18
+	%.76 =w call $printf(l $__builtin_print_format, w %.75)
+	jmp @.switch_exit.36
+@.switch_default.39
+	%.77 =l copy $__builtin_print
+	%.78 =w copy 19
+	%.79 =w call $printf(l $__builtin_print_format, w %.78)
+	jmp @.switch_exit.36
+@.switch_bottom.40
+	jmp @.switch_exit.36
+@.switch_cond.35
+	%.80 =w copy 1
+	%.81 =w ceqw %.70, %.80
+	jnz %.81, @.switch_case.37, @.switch_cond.41
+@.switch_cond.41
+	%.82 =w copy 2
+	%.83 =w ceqw %.70, %.82
+	jnz %.83, @.switch_case.38, @.switch_default.39
+@.switch_exit.36
+	%.84 =l copy $__builtin_print
+	%.85 =w copy 20
+	%.86 =w call $printf(l $__builtin_print_format, w %.85)
+@.switch_bottom.42
+	jmp @.switch_exit.17
+@.switch_cond.16
+	%.87 =w copy 1
+	%.88 =w ceqw %.35, %.87
+	jnz %.88, @.switch_case.18, @.switch_cond.43
+@.switch_cond.43
+	%.89 =w copy 2
+	%.90 =w ceqw %.35, %.89
+	jnz %.90, @.switch_case.26, @.switch_default.34
+@.switch_exit.17
+	%.91 =l copy $__builtin_print
+	%.92 =w copy 21
+	%.93 =w call $printf(l $__builtin_print_format, w %.92)
+	%.94 =w copy 0
+	ret %.94
+}

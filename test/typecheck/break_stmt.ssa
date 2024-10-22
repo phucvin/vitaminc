@@ -1,0 +1,15 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+# loop init
+@.for_pred.2
+@.for_body.2
+	jmp @.for_end.2
+@.for_step.2
+	jmp @.for_pred.2
+@.for_end.2
+	%.1 =w copy 0
+	ret %.1
+}

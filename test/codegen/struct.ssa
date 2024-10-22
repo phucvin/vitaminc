@@ -1,0 +1,72 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =l alloc4 12
+	%.2 =w copy 3
+	%.3 =l add %.1, 0
+	storew %.2, %.3
+	%.4 =w copy 5
+	%.5 =l add %.1, 4
+	storew %.4, %.5
+	%.6 =w copy 1998
+	%.7 =l add %.1, 8
+	storew %.6, %.7
+	%.8 =l copy $__builtin_print
+	%.9 =w loadw %.1
+	%.10 =l add %.1, 0
+	%.11 =w loadw %.10
+	%.12 =w call $printf(l $__builtin_print_format, w %.11)
+	%.13 =l copy $__builtin_print
+	%.14 =w loadw %.1
+	%.15 =l add %.1, 4
+	%.16 =w loadw %.15
+	%.17 =w call $printf(l $__builtin_print_format, w %.16)
+	%.18 =l copy $__builtin_print
+	%.19 =w loadw %.1
+	%.20 =l add %.1, 8
+	%.21 =w loadw %.20
+	%.22 =w call $printf(l $__builtin_print_format, w %.21)
+	%.23 =w loadw %.1
+	%.24 =l add %.1, 0
+	%.25 =w loadw %.24
+	%.26 =w loadw %.1
+	%.27 =l add %.1, 0
+	%.28 =w loadw %.27
+	%.30 =w copy 2
+	%.29 =w add %.28, %.30
+	storew %.29, %.24
+	%.31 =l copy $__builtin_print
+	%.32 =w loadw %.1
+	%.33 =l add %.1, 0
+	%.34 =w loadw %.33
+	%.35 =w call $printf(l $__builtin_print_format, w %.34)
+	%.36 =l alloc4 12
+	%.37 =w copy 100
+	%.38 =l add %.36, 0
+	storew %.37, %.38
+	%.39 =w copy 50
+	%.40 =l add %.36, 4
+	storew %.39, %.40
+	%.41 =w copy 500
+	%.42 =l add %.36, 8
+	storew %.41, %.42
+	%.43 =l copy $__builtin_print
+	%.44 =w loadw %.36
+	%.45 =l add %.36, 0
+	%.46 =w loadw %.45
+	%.47 =w call $printf(l $__builtin_print_format, w %.46)
+	%.48 =l copy $__builtin_print
+	%.49 =w loadw %.36
+	%.50 =l add %.36, 4
+	%.51 =w loadw %.50
+	%.52 =w call $printf(l $__builtin_print_format, w %.51)
+	%.53 =l copy $__builtin_print
+	%.54 =w loadw %.36
+	%.55 =l add %.36, 8
+	%.56 =w loadw %.55
+	%.57 =w call $printf(l $__builtin_print_format, w %.56)
+	%.58 =w copy 0
+	ret %.58
+}

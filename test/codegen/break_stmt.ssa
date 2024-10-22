@@ -1,0 +1,275 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =l alloc4 4
+	%.2 =w copy 0
+	storew %.2, %.1
+	%.3 =l alloc4 4
+	%.4 =w copy 0
+	storew %.4, %.3
+	%.5 =w loadw %.1
+	%.6 =w copy 0
+	storew %.6, %.1
+	%.7 =w loadw %.3
+	%.8 =w copy 0
+	storew %.8, %.3
+@.while_pred.2
+	%.9 =w loadw %.1
+	%.11 =w copy 10
+	%.10 =w csltw %.9, %.11
+	jnz %.10, @.while_body.2, @.while_end.2
+@.while_body.2
+	%.12 =w loadw %.1
+	%.14 =w copy 3
+	%.13 =w ceqw %.12, %.14
+# if
+	jnz %.13, @.if_then.3, @.if_end.3
+@.if_then.3
+	jmp @.while_end.2
+@.if_end.3
+	%.15 =w loadw %.3
+	%.16 =w loadw %.3
+	%.18 =w copy 1
+	%.17 =w add %.16, %.18
+	storew %.17, %.3
+	%.19 =w loadw %.1
+	%.20 =w loadw %.1
+	%.22 =w copy 1
+	%.21 =w add %.20, %.22
+	storew %.21, %.1
+	jmp @.while_pred.2
+@.while_end.2
+	%.23 =l copy $__builtin_print
+	%.24 =w loadw %.3
+	%.25 =w call $printf(l $__builtin_print_format, w %.24)
+	%.26 =w loadw %.1
+	%.27 =w copy 0
+	storew %.27, %.1
+	%.28 =w loadw %.3
+	%.29 =w copy 0
+	storew %.29, %.3
+@.do_body.4
+	%.30 =w loadw %.1
+	%.32 =w copy 5
+	%.31 =w ceqw %.30, %.32
+# if
+	jnz %.31, @.if_then.5, @.if_end.5
+@.if_then.5
+	jmp @.do_end.4
+@.if_end.5
+	%.33 =w loadw %.3
+	%.34 =w loadw %.3
+	%.36 =w copy 1
+	%.35 =w add %.34, %.36
+	storew %.35, %.3
+	%.37 =w loadw %.1
+	%.38 =w loadw %.1
+	%.40 =w copy 1
+	%.39 =w add %.38, %.40
+	storew %.39, %.1
+@.do_pred.4
+	%.41 =w loadw %.1
+	%.43 =w copy 10
+	%.42 =w csltw %.41, %.43
+	jnz %.42, @.do_body.4, @.do_end.4
+@.do_end.4
+	%.44 =l copy $__builtin_print
+	%.45 =w loadw %.3
+	%.46 =w call $printf(l $__builtin_print_format, w %.45)
+	%.47 =w loadw %.1
+	%.48 =w copy 0
+	storew %.48, %.1
+	%.49 =w loadw %.3
+	%.50 =w copy 0
+	storew %.50, %.3
+# loop init
+@.for_pred.6
+	%.51 =w loadw %.1
+	%.53 =w copy 10
+	%.52 =w csltw %.51, %.53
+	jnz %.52, @.for_body.6, @.for_end.6
+@.for_body.6
+	%.54 =w loadw %.1
+	%.56 =w copy 7
+	%.55 =w ceqw %.54, %.56
+# if
+	jnz %.55, @.if_then.7, @.if_end.7
+@.if_then.7
+	jmp @.for_end.6
+@.if_end.7
+	%.57 =w loadw %.3
+	%.58 =w loadw %.3
+	%.60 =w copy 1
+	%.59 =w add %.58, %.60
+	storew %.59, %.3
+@.for_step.6
+	%.61 =w loadw %.1
+	%.62 =w loadw %.1
+	%.64 =w copy 1
+	%.63 =w add %.62, %.64
+	storew %.63, %.1
+	jmp @.for_pred.6
+@.for_end.6
+	%.65 =l copy $__builtin_print
+	%.66 =w loadw %.3
+	%.67 =w call $printf(l $__builtin_print_format, w %.66)
+	%.68 =w loadw %.1
+	%.69 =w copy 0
+	storew %.69, %.1
+	%.70 =w loadw %.3
+	%.71 =w copy 0
+	storew %.71, %.3
+@.while_pred.8
+	%.72 =w loadw %.1
+	%.74 =w copy 10
+	%.73 =w csltw %.72, %.74
+	jnz %.73, @.while_body.8, @.while_end.8
+@.while_body.8
+	%.75 =l alloc4 4
+	%.76 =w copy 0
+	storew %.76, %.75
+@.while_pred.9
+	%.77 =w loadw %.75
+	%.79 =w copy 10
+	%.78 =w csltw %.77, %.79
+	jnz %.78, @.while_body.9, @.while_end.9
+@.while_body.9
+	%.80 =w loadw %.75
+	%.82 =w copy 3
+	%.81 =w ceqw %.80, %.82
+# if
+	jnz %.81, @.if_then.10, @.if_end.10
+@.if_then.10
+	jmp @.while_end.9
+@.if_end.10
+	%.83 =w loadw %.3
+	%.84 =w loadw %.3
+	%.86 =w copy 1
+	%.85 =w add %.84, %.86
+	storew %.85, %.3
+	%.87 =w loadw %.75
+	%.88 =w loadw %.75
+	%.90 =w copy 1
+	%.89 =w add %.88, %.90
+	storew %.89, %.75
+	jmp @.while_pred.9
+@.while_end.9
+	%.91 =w loadw %.1
+	%.92 =w loadw %.1
+	%.94 =w copy 1
+	%.93 =w add %.92, %.94
+	storew %.93, %.1
+	jmp @.while_pred.8
+@.while_end.8
+	%.95 =l copy $__builtin_print
+	%.96 =w loadw %.3
+	%.97 =w call $printf(l $__builtin_print_format, w %.96)
+	%.98 =w loadw %.1
+	%.99 =w copy 0
+	storew %.99, %.1
+	%.100 =w loadw %.3
+	%.101 =w copy 0
+	storew %.101, %.3
+@.do_body.11
+	%.102 =l alloc4 4
+	%.103 =w copy 0
+	storew %.103, %.102
+@.do_body.12
+	%.104 =w loadw %.102
+	%.106 =w copy 5
+	%.105 =w ceqw %.104, %.106
+# if
+	jnz %.105, @.if_then.13, @.if_end.13
+@.if_then.13
+	jmp @.do_end.12
+@.if_end.13
+	%.107 =w loadw %.3
+	%.108 =w loadw %.3
+	%.110 =w copy 1
+	%.109 =w add %.108, %.110
+	storew %.109, %.3
+	%.111 =w loadw %.102
+	%.112 =w loadw %.102
+	%.114 =w copy 1
+	%.113 =w add %.112, %.114
+	storew %.113, %.102
+@.do_pred.12
+	%.115 =w loadw %.102
+	%.117 =w copy 10
+	%.116 =w csltw %.115, %.117
+	jnz %.116, @.do_body.12, @.do_end.12
+@.do_end.12
+	%.118 =w loadw %.1
+	%.119 =w loadw %.1
+	%.121 =w copy 1
+	%.120 =w add %.119, %.121
+	storew %.120, %.1
+@.do_pred.11
+	%.122 =w loadw %.1
+	%.124 =w copy 10
+	%.123 =w csltw %.122, %.124
+	jnz %.123, @.do_body.11, @.do_end.11
+@.do_end.11
+	%.125 =l copy $__builtin_print
+	%.126 =w loadw %.3
+	%.127 =w call $printf(l $__builtin_print_format, w %.126)
+	%.128 =w loadw %.1
+	%.129 =w copy 0
+	storew %.129, %.1
+	%.130 =w loadw %.3
+	%.131 =w copy 0
+	storew %.131, %.3
+# loop init
+@.for_pred.14
+	%.132 =w loadw %.1
+	%.134 =w copy 10
+	%.133 =w csltw %.132, %.134
+	jnz %.133, @.for_body.14, @.for_end.14
+@.for_body.14
+# loop init
+	%.135 =l alloc4 4
+	%.136 =w copy 0
+	storew %.136, %.135
+@.for_pred.15
+	%.137 =w loadw %.135
+	%.139 =w copy 10
+	%.138 =w csltw %.137, %.139
+	jnz %.138, @.for_body.15, @.for_end.15
+@.for_body.15
+	%.140 =w loadw %.135
+	%.142 =w copy 7
+	%.141 =w ceqw %.140, %.142
+# if
+	jnz %.141, @.if_then.16, @.if_end.16
+@.if_then.16
+	jmp @.for_end.15
+@.if_end.16
+	%.143 =w loadw %.3
+	%.144 =w loadw %.3
+	%.146 =w copy 1
+	%.145 =w add %.144, %.146
+	storew %.145, %.3
+@.for_step.15
+	%.147 =w loadw %.135
+	%.148 =w loadw %.135
+	%.150 =w copy 1
+	%.149 =w add %.148, %.150
+	storew %.149, %.135
+	jmp @.for_pred.15
+@.for_end.15
+@.for_step.14
+	%.151 =w loadw %.1
+	%.152 =w loadw %.1
+	%.154 =w copy 1
+	%.153 =w add %.152, %.154
+	storew %.153, %.1
+	jmp @.for_pred.14
+@.for_end.14
+	%.155 =l copy $__builtin_print
+	%.156 =w loadw %.3
+	%.157 =w call $printf(l $__builtin_print_format, w %.156)
+	%.158 =w copy 0
+	ret %.158
+}

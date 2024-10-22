@@ -1,0 +1,97 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =w copy 1
+# if
+	jnz %.1, @.if_then.2, @.if_end.2
+@.if_then.2
+	%.2 =l copy $__builtin_print
+	%.3 =w copy 1
+	%.4 =w call $printf(l $__builtin_print_format, w %.3)
+@.if_end.2
+	%.5 =l copy $__builtin_print
+	%.6 =w copy 2
+	%.7 =w call $printf(l $__builtin_print_format, w %.6)
+	%.8 =w copy 1
+# if
+	jnz %.8, @.if_then.3, @.if_else.3
+@.if_then.3
+	%.9 =l copy $__builtin_print
+	%.10 =w copy 3
+	%.11 =w call $printf(l $__builtin_print_format, w %.10)
+	jmp @.if_end.3
+
+@.if_else.3
+	%.12 =l copy $__builtin_print
+	%.13 =w copy 4
+	%.14 =w call $printf(l $__builtin_print_format, w %.13)
+@.if_end.3
+	%.15 =w copy 1
+# if
+	jnz %.15, @.if_then.4, @.if_else.4
+@.if_then.4
+	%.16 =w copy 1
+# if
+	jnz %.16, @.if_then.5, @.if_else.5
+@.if_then.5
+	%.17 =l copy $__builtin_print
+	%.18 =w copy 5
+	%.19 =w call $printf(l $__builtin_print_format, w %.18)
+	jmp @.if_end.5
+
+@.if_else.5
+	%.20 =l copy $__builtin_print
+	%.21 =w copy 6
+	%.22 =w call $printf(l $__builtin_print_format, w %.21)
+@.if_end.5
+	%.23 =w copy 1
+# if
+	jnz %.23, @.if_then.6, @.if_end.6
+@.if_then.6
+	%.24 =l copy $__builtin_print
+	%.25 =w copy 7
+	%.26 =w call $printf(l $__builtin_print_format, w %.25)
+@.if_end.6
+	%.27 =l copy $__builtin_print
+	%.28 =w copy 8
+	%.29 =w call $printf(l $__builtin_print_format, w %.28)
+	jmp @.if_end.4
+
+@.if_else.4
+	%.30 =l copy $__builtin_print
+	%.31 =w copy 9
+	%.32 =w call $printf(l $__builtin_print_format, w %.31)
+	%.33 =w copy 1
+# if
+	jnz %.33, @.if_then.7, @.if_else.7
+@.if_then.7
+	%.34 =l copy $__builtin_print
+	%.35 =w copy 10
+	%.36 =w call $printf(l $__builtin_print_format, w %.35)
+	jmp @.if_end.7
+
+@.if_else.7
+	%.37 =l copy $__builtin_print
+	%.38 =w copy 11
+	%.39 =w call $printf(l $__builtin_print_format, w %.38)
+@.if_end.7
+	%.40 =w copy 1
+# if
+	jnz %.40, @.if_then.8, @.if_end.8
+@.if_then.8
+	%.41 =l copy $__builtin_print
+	%.42 =w copy 12
+	%.43 =w call $printf(l $__builtin_print_format, w %.42)
+@.if_end.8
+	%.44 =l copy $__builtin_print
+	%.45 =w copy 13
+	%.46 =w call $printf(l $__builtin_print_format, w %.45)
+@.if_end.4
+	%.47 =l copy $__builtin_print
+	%.48 =w copy 14
+	%.49 =w call $printf(l $__builtin_print_format, w %.48)
+	%.50 =w copy 0
+	ret %.50
+}

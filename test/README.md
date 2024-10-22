@@ -23,3 +23,7 @@ make
 ./vitaminc test/codegen/array.c
 
 ./vitaminc --target=llvm test/codegen/array.c
+
+pip install --user turnt
+
+make test

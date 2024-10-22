@@ -1,0 +1,102 @@
+data $__builtin_print_format = align 1 { b "%d\012\000", }
+export data $c = align 4 { z 4 }
+export data $d = align 4 { w 6 }
+export data $b = align 4 { z 8 }
+export data $a = align 4 { w 6, w 5, w 3 }
+export data $e = align 4 { w 8, w 9, z 8 }
+export
+function w $main() {
+@.start.1
+@.body.1
+	%.1 =l copy $__builtin_print
+	%.2 =w loadw $c
+	%.3 =w call $printf(l $__builtin_print_format, w %.2)
+	%.4 =w loadw $d
+	%.5 =w copy 4
+	storew %.5, $d
+	%.6 =l copy $__builtin_print
+	%.7 =w loadw $d
+	%.8 =w call $printf(l $__builtin_print_format, w %.7)
+	%.9 =l copy $__builtin_print
+	%.10 =w loadw $b
+	%.11 =w copy 0
+	%.12 =l extsw %.11
+	%.13 =l mul %.12, 4
+	%.14 =l add $b, %.13
+	%.15 =w loadw %.14
+	%.16 =w call $printf(l $__builtin_print_format, w %.15)
+	%.17 =w loadw $a
+	%.18 =w copy 0
+	%.19 =l extsw %.18
+	%.20 =l mul %.19, 4
+	%.21 =l add $a, %.20
+	%.22 =w loadw %.21
+	%.23 =w copy 7
+	storew %.23, %.21
+	%.24 =w loadw $a
+	%.25 =w copy 2
+	%.26 =l extsw %.25
+	%.27 =l mul %.26, 4
+	%.28 =l add $a, %.27
+	%.29 =w loadw %.28
+	%.30 =w copy 4
+	storew %.30, %.28
+	%.31 =l copy $__builtin_print
+	%.32 =w loadw $a
+	%.33 =w copy 0
+	%.34 =l extsw %.33
+	%.35 =l mul %.34, 4
+	%.36 =l add $a, %.35
+	%.37 =w loadw %.36
+	%.38 =w call $printf(l $__builtin_print_format, w %.37)
+	%.39 =l copy $__builtin_print
+	%.40 =w loadw $a
+	%.41 =w copy 1
+	%.42 =l extsw %.41
+	%.43 =l mul %.42, 4
+	%.44 =l add $a, %.43
+	%.45 =w loadw %.44
+	%.46 =w call $printf(l $__builtin_print_format, w %.45)
+	%.47 =l copy $__builtin_print
+	%.48 =w loadw $a
+	%.49 =w copy 2
+	%.50 =l extsw %.49
+	%.51 =l mul %.50, 4
+	%.52 =l add $a, %.51
+	%.53 =w loadw %.52
+	%.54 =w call $printf(l $__builtin_print_format, w %.53)
+	%.55 =l copy $__builtin_print
+	%.56 =w loadw $e
+	%.57 =w copy 0
+	%.58 =l extsw %.57
+	%.59 =l mul %.58, 4
+	%.60 =l add $e, %.59
+	%.61 =w loadw %.60
+	%.62 =w call $printf(l $__builtin_print_format, w %.61)
+	%.63 =l copy $__builtin_print
+	%.64 =w loadw $e
+	%.65 =w copy 1
+	%.66 =l extsw %.65
+	%.67 =l mul %.66, 4
+	%.68 =l add $e, %.67
+	%.69 =w loadw %.68
+	%.70 =w call $printf(l $__builtin_print_format, w %.69)
+	%.71 =l copy $__builtin_print
+	%.72 =w loadw $e
+	%.73 =w copy 2
+	%.74 =l extsw %.73
+	%.75 =l mul %.74, 4
+	%.76 =l add $e, %.75
+	%.77 =w loadw %.76
+	%.78 =w call $printf(l $__builtin_print_format, w %.77)
+	%.79 =l copy $__builtin_print
+	%.80 =w loadw $e
+	%.81 =w copy 3
+	%.82 =l extsw %.81
+	%.83 =l mul %.82, 4
+	%.84 =l add $e, %.83
+	%.85 =w loadw %.84
+	%.86 =w call $printf(l $__builtin_print_format, w %.85)
+	%.87 =w copy 0
+	ret %.87
+}
