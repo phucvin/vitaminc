@@ -17,3 +17,9 @@ scripts/install-cxxopts.sh
 scripts/install-qbe.sh
 
 sudo apt install flex
+
+make
+
+./vitaminc test/codegen/array.c
+
+./vitaminc --target=llvm test/codegen/array.c
